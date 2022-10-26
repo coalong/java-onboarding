@@ -7,7 +7,11 @@ class Problem1 {
         if (checkPageValid(pobi) || checkPageValid(crong)) {
             return -1;
         }
-        return 0;
+        if (calHighPage(pobi.get(0), pobi.get(1)) > calHighPage(crong.get(0), crong.get(1))) {
+            return 1;
+        } else if (calHighPage(pobi.get(0), pobi.get(1)) < calHighPage(crong.get(0), crong.get(1))) {
+            return 2;
+        } else return 0;
     }
 
     private static boolean checkPageValid(List<Integer> pageList) {
